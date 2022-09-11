@@ -31,7 +31,7 @@ const Title = ({ state }) => {
     title = `${cleanTitle} - ${state.frontity.title}`;
   } else if (data.is404) {
     // Add titles to 404's.
-    title = `404 Not Found - ${state.frontity.title}`;
+    title = state.frontity.title;
   }
 
   return (

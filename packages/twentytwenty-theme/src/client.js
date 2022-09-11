@@ -16,6 +16,34 @@ const twentyTwentyTheme = {
      * State is where the packages store their default settings and other
      * relevant state. It is scoped to the `theme` namespace.
      */
+    auth: {
+      isAuthenticated: false,
+      user: {
+        id: '',
+        name: '',
+        email: ''
+      }
+    },
+    source: {
+      data: {
+        "/routes/": {
+          isRoutes: true,
+          isReady: true
+        },
+        "/submit-route/": {
+          isSubmitRoute: true,
+          isReady: true
+        },
+        "/submit-time/": {
+          isSubmitTime: true,
+          isReady: true
+        },
+        "/fastest-known-bike/": {
+          isFastestKnownBike: true,
+          isReady: true
+        },
+      }
+    },
     theme: {
       colors: {
         gray: {
@@ -23,13 +51,13 @@ const twentyTwentyTheme = {
           light: "#DCD7CA",
           lighter: "#F5EFE0",
         },
-        primary: "#cd2653",
+        primary: "#9fb6a2",
         headerBg: "#ffffff",
         footerBg: "#ffffff",
         bodyBg: "#f5efe0",
       },
       // Whether to show the search button in page header
-      showSearchInHeader: true,
+      showSearchInHeader: false,
       // Menu links to display in the header
       menu: [],
       // State for the menu on mobile
@@ -61,6 +89,23 @@ const twentyTwentyTheme = {
    * Frontity like libraries.
    */
   actions: {
+    auth: {
+      setUser: ({state}) => user => {
+        state.auth.user = user;
+      },
+      setIsAuthenticated: ({state}) => isAuthenticated => {
+        state.auth.isAuthenticated = isAuthenticated;
+      },
+      setUserFullName: ({state}) => name => {
+        state.auth.user.name = name;
+      },
+      setUserId: ({state}) => id => {
+        state.auth.user.id = id;
+      },
+      setUserEmail: ({state}) => email => {
+        state.auth.user.email = email;
+      }
+    },
     theme: {
       openMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = true;
@@ -77,6 +122,19 @@ const twentyTwentyTheme = {
     },
   },
   libraries: {
+    source: {
+      handlers: [
+        {
+          pattern: "/routes/:id",
+          func: ({state, link, params}) => {
+            state.source.data[link] = {
+              isRoute: true,
+              id: params.id
+            }
+          }
+        }
+      ]
+    },
     html2react: {
       /**
        * Add a processor to `html2react` so it processes the `<img>` tags

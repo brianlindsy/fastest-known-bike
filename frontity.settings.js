@@ -3,8 +3,8 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "title": "Fastest Known Bike",
+      "description": "The people, times and stories behind the best bike routes"
     }
   },
   "packages": [
@@ -18,21 +18,33 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Routes",
+              "/routes/"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "FKB",
+              "/fastest-known-bike/"
             ],
             [
-              "Japan",
-              "/tag/japan/"
+              "Submit a route",
+              "/submit-route/"
+            ],
+            [
+              "Submit a time",
+              "/submit-time/"
+            ],
+            [
+              "Guidelines",
+              "/guidelines/"
+            ],
+            [
+              "Blog",
+              "/category/blog/"
             ],
             [
               "About Us",
               "/about-us/"
-            ]
+            ],
           ],
           "featured": {
             "showOnList": false,
@@ -45,12 +57,23 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://cms.fastestknownbike.com/",
+          "homepage": "/welcome-to-fastest-known-bike"
         }
       }
     },
+    {
+      "name": "@frontity/google-analytics",
+      "state": {
+        "googleAnalytics": {
+          "trackingId": "G-MCG54BD1HR",
+        },
+      },
+    },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "@aws-amplify",
+    "@aws-sdk",
   ]
 };
 

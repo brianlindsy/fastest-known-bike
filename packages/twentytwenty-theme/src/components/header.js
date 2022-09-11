@@ -6,10 +6,15 @@ import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
+import logo from './../assets/fkb-logo.png';
+import UserHeader from "./user-header";
 
-const Header = ({ state }) => {
+
+const Header = ({state}) => {
   const { title, description } = state.frontity;
   const { headerBg } = state.theme.colors;
+
+  const name = state.auth.user.name;
 
   return (
     <PageHeader bg={headerBg} id="site-header">
@@ -17,6 +22,7 @@ const Header = ({ state }) => {
         <TitleWrapper>
           {/* Search button on mobile */}
           {state.theme.showSearchInHeader && <MobileSearchButton />}
+          <Logo src={logo}></Logo>
 
           {/* Heading and Description of the site */}
           <TitleGroup>
@@ -37,6 +43,7 @@ const Header = ({ state }) => {
           {/* Desktop search button */}
           {state.theme.showSearchInHeader && <SearchButton />}
         </HeaderNavigationWrapper>
+        <UserHeader />
       </HeaderInner>
       {/* Global search modal */}
       <SearchModal />
@@ -46,6 +53,11 @@ const Header = ({ state }) => {
 
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Header);
+
+const Logo = styled.img`
+  height: 50px;
+  width: 50px;
+`;
 
 const TitleGroup = styled.div`
   @media (min-width: 1000px) {
@@ -81,14 +93,13 @@ const PageHeader = styled.header`
 `;
 
 const HeaderInner = styled.div`
-  align-items: center;
+  align-items: left;
   display: flex;
   justify-content: space-between;
-  padding: 2.8rem 0;
-  max-width: 168rem;
+  padding: 2rem 0;
+  max-width: 174rem;
   z-index: 100;
   margin-left: auto;
-  margin-right: auto;
 
   @media (min-width: 700px) {
     width: calc(100% - 8rem);
@@ -143,7 +154,8 @@ const HeaderNavigationWrapper = styled.div`
   display: none;
 
   @media (min-width: 1000px) {
-    align-items: center;
+    align-items: left;
     display: flex;
+    margin-left: 10px;
   }
 `;

@@ -28,7 +28,6 @@ const ErrorPage = ({ state }) => {
     <Container size="thin">
       <EntryTitle>{data.is404 ? title404 : title}</EntryTitle>
       <IntroText>{data.is404 ? description404 : description}</IntroText>
-      <SearchForm />
     </Container>
   );
 };

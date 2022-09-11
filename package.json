@@ -12,16 +12,34 @@
   },
   "scripts": {
     "dev": "frontity dev",
-    "build": "frontity build",
-    "serve": "frontity serve"
+    "build": "npx frontity build",
+    "serve": "npx frontity serve",
+    "start": "npx frontity serve"
   },
   "prettier": {},
   "dependencies": {
-    "frontity": "^1.17.2",
-    "@frontity/core": "^1.16.0",
-    "@frontity/wp-source": "^1.11.7",
-    "@frontity/tiny-router": "^1.4.4",
+    "@aws-amplify/ui-react": "^3.5.1",
+    "@aws-sdk/util-dynamodb": "^3.165.0",
+    "@frontity/core": "./packages/core",
+    "@frontity/google-analytics": "^2.1.0",
     "@frontity/html2react": "^1.7.0",
-    "@frontity/twentytwenty-theme": "./packages/twentytwenty-theme"
+    "@frontity/tiny-router": "^1.4.4",
+    "@frontity/twentytwenty-theme": "./packages/twentytwenty-theme",
+    "@frontity/wp-source": "^1.11.7",
+    "@mapbox/togeojson": "^0.16.0",
+    "@tmcw/togeojson": "^5.2.2",
+    "@xmldom/xmldom": "^0.8.2",
+    "aws-amplify": "^4.3.34",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
+    "frontity": "^1.17.2",
+    "fs": "0.0.2",
+    "mapbox-gl": "^2.10.0",
+    "object-hash": "^3.0.0",
+    "react-aws-s3": "^1.5.0",
+    "react-bootstrap": "^2.5.0",
+    "react-router-dom": "^6.3.0",
+    "uuid": "^8.3.2",
+    "xmldom": "^0.6.0"
   }
 }

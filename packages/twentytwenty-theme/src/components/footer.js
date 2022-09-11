@@ -34,7 +34,7 @@ const Footer = ({ state }) => {
             &copy; {currentYear}{" "}
             <Link link={state.frontity.url}>{state.frontity.title}</Link>
           </Copyright>
-          <PoweredBy>Powered by Frontity</PoweredBy>
+          <PoweredBy>Made with {'<3'} in Flagstaff</PoweredBy>
         </Credits>
         <BackToTop />
       </SiteFooterInner>
@@ -62,7 +62,7 @@ const SiteFooter = styled.footer`
   @media (min-width: 700px) {
     margin-top: 8rem;
     font-size: 1.8rem;
-    padding: 4.3rem 0;
+    padding: 3rem 0;
   }
 
   a {
