@@ -20,7 +20,7 @@ const Attempts = () => {
     return(
         <RoutesContainer>
             <Header>Fastest Known Bikes</Header>
-            <StyledTable striped bordered hover>
+            <StyledTable responsive striped bordered hover>
                 <thead>
                     <tr>
                     <th>Route Name</th>
@@ -54,7 +54,7 @@ const Header = styled.h2`
 `;
 
 const RoutesContainer = styled.div`
-    width: 75%;
+    width: 90%;
     margin: auto;
 `;
 

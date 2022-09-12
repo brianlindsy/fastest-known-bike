@@ -21,11 +21,12 @@ const Routes = () => {
     return(
         <RoutesContainer>
             <Header>Routes</Header>
-            <StyledTable striped bordered hover>
+            <StyledTable responsive striped bordered hover>
                 <thead>
                     <tr>
                     <th>Route Name</th>
                     <th>Location</th>
+                    <th>Terrain</th>
                     <th>Created By</th>
                     <th>Distance</th>
                     </tr>
@@ -35,6 +36,7 @@ const Routes = () => {
                     <tr>
                         <td><Link link={"/routes/" + route.id}>{route.routeName}</Link></td>
                         <td>{route.location}</td>
+                        <td>{route.terrain}</td>
                         <td>{route.createdByName}</td>
                         <td>{route.distance}</td>
                     </tr>
@@ -49,7 +51,7 @@ const Header = styled.h2`
 `;
 
 const RoutesContainer = styled.div`
-    width: 75%;
+    width: 90%;
     margin: auto;
 `;
 

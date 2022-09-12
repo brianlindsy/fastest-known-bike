@@ -12,8 +12,8 @@ const AuthScreen = ({state}) => {
 }
 
 const StyledAuthScreen = styled.div`
-    width: 25%;
-    height: 25%;
+    width: 75%;
+    height: 50%;
     margin: auto;
 `;
 

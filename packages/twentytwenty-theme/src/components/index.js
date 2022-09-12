@@ -7,7 +7,6 @@ import Header from "./header";
 import Archive from "./archive";
 import Loading from "./loading";
 import Post from "./post";
-import SearchResults from "./search/search-results";
 import SkipLink from "./styles/skip-link";
 import MetaTitle from "./page-meta-title";
 import PageError from "./page-error";
@@ -103,7 +102,6 @@ const Theme = ({ state, actions }) => {
         <Main id="main">
           <Switch>
             <Loading when={data.isFetching} />
-            <SearchResults when={data.isSearch} />
             <Archive when={data.isArchive} />
             <Post when={data.isPostType} />
             <Routes when={data.isRoutes} />

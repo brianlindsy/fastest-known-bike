@@ -155,7 +155,7 @@ const Header = styled.h2`
 `;
 
 const FormContainer = styled.div`
-  width: 50%;
+  width: 90%;
   margin: auto;
 `;
 

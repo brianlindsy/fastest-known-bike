@@ -6,6 +6,7 @@ import { CloseIcon } from "../icons";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import SectionContainer from "../styles/section-container";
+import UserHeader from "../user-header";
 
 const MobileMenuModal = ({ state, actions }) => {
   // Get the menu state and action
@@ -39,15 +40,15 @@ const MobileMenuModal = ({ state, actions }) => {
       <ModalInner>
         <MenuWrapper ref={menuRef}>
           <div style={{ flexShrink: 0 }}>
+            <UserHeader />
             <CloseNavToggle
               ref={closeButtonRef}
               aria-expanded={isMobileMenuOpen}
               onClick={closeMobileMenu}
             >
               <ToggleText> Close Menu</ToggleText>
-              <CloseIcon />
-            </CloseNavToggle>
-
+              < CloseIcon />
+              </CloseNavToggle>
             <MenuContent
               as="nav"
               role="navigation"
@@ -77,6 +78,10 @@ const MobileMenuModal = ({ state, actions }) => {
     </Modal>
   );
 };
+
+const WrapEnd = styled.div`
+  margin-right: 0rem;
+`;
 
 const Modal = styled.div`
   background: #fff;

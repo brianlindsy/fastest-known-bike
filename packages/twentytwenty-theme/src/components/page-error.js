@@ -1,5 +1,4 @@
 import { styled, connect } from "frontity";
-import SearchForm from "./search/search-form";
 import SectionContainer from "./styles/section-container";
 
 const description404 = (

@@ -2,6 +2,8 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import link from "@frontity/html2react/processors/link";
 
+const isMobile = window.innerWidth <= 768;
+
 const twentyTwentyTheme = {
   name: "@frontity/twentytwenty-theme",
   roots: {
@@ -12,6 +14,7 @@ const twentyTwentyTheme = {
     theme: Theme,
   },
   state: {
+    isMobile: isMobile,
     /**
      * State is where the packages store their default settings and other
      * relevant state. It is scoped to the `theme` namespace.

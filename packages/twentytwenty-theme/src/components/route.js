@@ -77,12 +77,12 @@ const Route = ({state}) => {
         <>
             <RouteContainer>
                 <h2>{route?.routeName}</h2>
-                <div>Location: {route?.location}</div>
-                <div>Submitted By: {route?.createdByName}</div>
-                <div>Terrain Types: {route?.terrain}</div>
-                <div>Distance: {route?.distance}</div>
-                <div>Description: {route?.description}</div>
                 <Map ref={mapContainer} className="map-container" />
+                <div><h6>Location:</h6> {route?.location}</div>
+                <div><h6>Terrain Types:</h6> {route?.terrain}</div>
+                <div><h6>Distance:</h6> {route?.distance}</div>
+                <div><h6>Description:</h6> {route?.description}</div>
+                <div><h6>Submitted By:</h6> {route?.createdByName}</div>
             </RouteContainer>
             
         </>
@@ -90,13 +90,11 @@ const Route = ({state}) => {
 };
 
 const Map = styled.div`
-    height: 50%;
 `;
 
 const RouteContainer = styled.div`
-    width: 50%;
+    width: 80%;
     margin: auto;
-    margin-left: 20%;
 `;
 
 export default connect(Route);

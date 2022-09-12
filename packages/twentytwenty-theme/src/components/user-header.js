@@ -21,7 +21,9 @@ const UserHeader = ({state}) => {
 };
 
 const Wrapper = styled.div`
-    margin: auto;
+    @media (min-width: 1000px) {
+        margin-left: 4rem;
+    }
 `;
 
 export default connect(UserHeader);

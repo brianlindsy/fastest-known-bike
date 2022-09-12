@@ -219,7 +219,7 @@ const SubHeader = styled.h5`
 `;
 
 const FormContainer = styled.div`
-  width: 50%;
+  width: 90%;
   margin: auto;
 `;
 

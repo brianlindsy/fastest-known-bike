@@ -1,9 +1,6 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Navigation from "./navigation/navigation";
-import SearchButton from "./search/search-button";
-import SearchModal from "./search/search-modal";
-import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
 import logo from './../assets/fkb-logo.png';
@@ -16,12 +13,12 @@ const Header = ({state}) => {
 
   const name = state.auth.user.name;
 
+  const isMobile = state.isMobile;
+
   return (
     <PageHeader bg={headerBg} id="site-header">
       <HeaderInner>
         <TitleWrapper>
-          {/* Search button on mobile */}
-          {state.theme.showSearchInHeader && <MobileSearchButton />}
           <Logo src={logo}></Logo>
 
           {/* Heading and Description of the site */}
@@ -37,16 +34,15 @@ const Header = ({state}) => {
           <MobileMenuModal />
         </TitleWrapper>
 
-        <HeaderNavigationWrapper>
-          {/* Desktop navigation links */}
-          <Navigation />
-          {/* Desktop search button */}
-          {state.theme.showSearchInHeader && <SearchButton />}
-        </HeaderNavigationWrapper>
-        <UserHeader />
+        {
+        !isMobile &&
+          <HeaderNavigationWrapper>
+            {/* Desktop navigation links */}
+            <Navigation />
+            <UserHeader />
+          </HeaderNavigationWrapper>
+        }
       </HeaderInner>
-      {/* Global search modal */}
-      <SearchModal />
     </PageHeader>
   );
 };
@@ -55,8 +51,8 @@ const Header = ({state}) => {
 export default connect(Header);
 
 const Logo = styled.img`
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
 `;
 
 const TitleGroup = styled.div`
@@ -72,10 +68,10 @@ const TitleGroup = styled.div`
 const TitleWrapper = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
-  padding: 0 4rem;
+  justify-content: start;
   text-align: center;
   width: 100%;
+  padding: 0.5rem;
 
   @media (min-width: 1000px) {
     width: auto;
@@ -93,17 +89,12 @@ const PageHeader = styled.header`
 `;
 
 const HeaderInner = styled.div`
-  align-items: left;
+  align-items: start;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
-  max-width: 174rem;
+  max-width: 180rem;
+  padding: 0.5rem;
   z-index: 100;
-  margin-left: auto;
-
-  @media (min-width: 700px) {
-    width: calc(100% - 8rem);
-  }
 `;
 
 const SiteTitle = styled.h1`
@@ -154,8 +145,9 @@ const HeaderNavigationWrapper = styled.div`
   display: none;
 
   @media (min-width: 1000px) {
-    align-items: left;
+    align-items: center;
+    text-align: center;
     display: flex;
-    margin-left: 10px;
+    margin-top: 2rem;
   }
 `;
