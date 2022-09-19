@@ -78,8 +78,6 @@ const SubmitRoute = ({state}) => {
         createdByEmail: email,
         approved: false
       };
-
-      console.log(putObj);
       await fetch(routesUrl, {
         method: 'PUT',
         body: JSON.stringify(putObj),
